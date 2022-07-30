@@ -7,8 +7,8 @@ const SelectField: FC<Props> = ({options, name}) => {
   const { register } = useFormContext()
 
   return (
-    <select {...register(name)}>
-        <option key="default" value="default" disabled>Seleciona...</option>
+    <select {...register(name)} defaultValue="default" >
+        <option key="default" value="default" disabled hidden>Seleciona...</option>
         {options.map(op => <option key={op} value={op} >{op}</option>)}
     </select>
   )

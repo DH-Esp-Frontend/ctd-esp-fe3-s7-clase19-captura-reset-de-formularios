@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { FormProvider, useForm } from 'react-hook-form'
 import InputField from '../components/InputField'
+import ResetForm from '../components/ResetButton'
 import SelectField from '../components/SelectField'
 import styles from '../styles/Home.module.css'
 
@@ -24,12 +25,13 @@ const Home: NextPage = () => {
       </h1>
        <FormProvider {...methods}>
         <form onSubmit={onSubmit}>
-          <InputField placeholder='Email' autocomplete={['@gmail.com', '@hotmail.com']} />
-          <InputField placeholder='Nombre'/>
-          <InputField placeholder='Apellido'/>
+          <InputField name='Email' autocomplete={['@gmail.com', '@hotmail.com']} />
+          <InputField name='Nombre'/>
+          <InputField name='Apellido'/>
           <SelectField name='plan' options={["Basico", "Estandar", "Premium"]}/>
           <button>Siguiente</button>
         </form>
+        <ResetForm/>
        </FormProvider>
     </div>
   )

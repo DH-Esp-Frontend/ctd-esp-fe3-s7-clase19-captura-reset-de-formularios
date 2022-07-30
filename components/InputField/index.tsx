@@ -2,18 +2,18 @@ import React, { FC } from 'react'
 import { useFormContext } from 'react-hook-form'
 import styles from "./input.module.css"
 
-type Props = {placeholder: string, autocomplete?: string[]}
+type Props = {name: string, autocomplete?: string[]}
 
-const InputField: FC<Props> = ({placeholder, autocomplete}) => {
+const InputField: FC<Props> = ({name, autocomplete}) => {
   const { register } = useFormContext()
   
   return (
     <>
     <div className={styles.inputContainer} >
-        <input className={styles.input} list={placeholder} placeholder={placeholder} {...register(placeholder)} />
+        <input className={styles.input} list={name} placeholder={name} {...register(name)} />
     </div>
       {autocomplete?.length ? (
-        <datalist id={placeholder} >
+        <datalist id={name} >
           {autocomplete.map(op => <option value={op} key={op}></option> )}
         </datalist>
       )
