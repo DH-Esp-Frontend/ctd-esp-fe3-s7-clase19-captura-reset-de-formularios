@@ -1,16 +1,16 @@
 import React from 'react'
 import { useFormContext } from 'react-hook-form'
-import { FaTrash } from 'react-icons/fa';
+import { FaWindowClose } from 'react-icons/fa';
 
-const ResetForm = () => {
-  const {reset} = useFormContext()
+const ResetButton = () => {
+  const { resetField } = useFormContext()
 
   return (
-    <button className='reset' onClick={()=>reset()} >
-        <FaTrash/>
+    <button className='reset' onClick={()=>resetField("Plan")} >
+        <FaWindowClose/>
     </button>
 
   )
 }
 
-export default ResetForm
+export default ResetButton

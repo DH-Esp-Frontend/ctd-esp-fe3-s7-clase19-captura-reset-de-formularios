@@ -19,7 +19,6 @@ const InputField: FC<Props> = ({name, autocomplete}) => {
       )
       : null}
     </>
-    
   )
 }
 
